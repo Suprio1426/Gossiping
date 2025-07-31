@@ -9,17 +9,7 @@ import 'highlight.js/styles/github.css';
 import 'highlight.js/styles/atom-one-dark.css';
 import { getWebContainer } from '../config/webcontainer.js';
 
-// import 'highlight.js/styles/github.css';
-// import 'highlight.js/styles/atom-one-dark.css';
 
-// // Set up syntax highlighting for Markdown
-// marked.setOptions({
-//   highlight: function (code, lang) {
-//     const validLang = hljs.getLanguage(lang) ? lang : "plaintext";
-//     return hljs.highlight(code, { language: validLang }).value;
-//   },
-//   langPrefix: 'hljs language-', // Highlight.js CSS hook
-// });
 
 function SyntaxHighlightedCode(props) {
     const ref = useRef(null)
@@ -95,91 +85,14 @@ function SyntaxHighlightedCode(props) {
       sender : user,
        });
 
-       //appendOutGoingMessage(message);
+       
 
        setMessages(prevMessages => [ ...prevMessages, { sender: user, message } ]) // Update messages state
 
        setMessage(""); // Clear the input field after sending
       }
     
-//   function appendIncomingMessage(messageObject) {
-//   const messageBox = document.querySelector('.message-box');
-//   if (!messageBox) return;
 
-//   const messageTextAi = document.createElement('div');
-
-//   messageTextAi.className = `
-//     incoming-msg 
-//     max-w-[45%] 
-//     min-h-[55%]
-//     flex flex-col 
-//     bg-black 
-//     text-white 
-//     p-2 m-2 
-//     rounded-lg 
-//     break-words 
-//     whitespace-pre-wrap 
-//     shadow 
-//     overflow-auto
-//     overflow-y-scroll
-//     [&::-webkit-scrollbar]:hidden
-//   `.replace(/\s+/g, ' ');
-
-//   if (messageObject.sender._id === 'ai') {
-//   let htmlContent = '';
-  
-//   try {
-//     const aiMessage = JSON.parse(messageObject.messages);
-
-//     // ✅ Only use "text" field if available
-//     const textToRender = typeof aiMessage === 'object' && aiMessage.text
-//       ? aiMessage.text
-//       : JSON.stringify(aiMessage, null, 2);
-
-//     const htmlFromMarkdown = marked.parse(textToRender);
-
-//     htmlContent = `
-//       <small class='opacity-75 text-xs mb-1'>${messageObject.sender.email}</small>
-//       <div class='text-sm leading-relaxed prose prose-invert max-w-none'>
-//         ${htmlFromMarkdown}
-//       </div>
-//     `;
-//   } catch (e) {
-//     // Fallback plain message
-//     htmlContent = `<p>${messageObject.messages}</p>`;
-//   }
-
-//   messageTextAi.innerHTML = htmlContent;
-//   messageBox.appendChild(messageTextAi);
-
-//   // Highlight code blocks
-//   messageTextAi.querySelectorAll('pre code').forEach((block) => {
-//     hljs.highlightElement(block);
-//   });
-
-//   scrollToBottom();
-// }
-
-//     else {
-        
-//          const messageText= document.createElement('div');
-
-//     messageText.className = 'incoming-msg max-w-54 flex flex-col bg-white p-2 m-1 rounded-lg w-fit';
-
-//          messageText.innerHTML = `
-//       <small class='opacity-80 text-xs'>
-//       ${messageObject.sender}
-//       </small>
-//       <p class='text-sm p-1'>
-//       ${messageObject.messages}
-//       </p> `;
-
-//       messageBox.appendChild(messageText);
-//       }
-
-//     scrollToBottom(); // Scroll to the bottom after appending the message
-      
-//    }
 
  function WriteAiMessage(message) {
 
@@ -204,25 +117,7 @@ function SyntaxHighlightedCode(props) {
 
 
 
-  //  function appendOutGoingMessage(message) {
-     
-  //   const messageBox = document.querySelector('.message-box');
-
-  //   const newMessage = document.createElement('div');
-  //   newMessage.className = 'mine-msg ml-auto flex flex-col bg-white p-2 m-1 rounded-lg w-fit max-w-56';
-  //   newMessage.innerHTML = `
-  //     <small class='opacity-80 text-xs'>
-  //     ${user.email}
-  //     </small>
-  //     <p class='text-sm p-1'>
-  //     ${message}
-  //     </p> `;
-
-  //   messageBox.appendChild(newMessage);
-
-  //   scrollToBottom(); // Scroll to the bottom after appending the message
-    
-  //  }
+  
 
    function scrollToBottom() {
   
@@ -267,7 +162,7 @@ function SyntaxHighlightedCode(props) {
             }
              else {
 
-                setMessages(prevMessages => [ ...prevMessages, data ]) // Update messages state
+                setMessages(prevMessages => [ ...prevMessages, data ]) 
             }
 
             scrollToBottom(); // Scroll to the bottom after receiving a new message
@@ -400,15 +295,7 @@ function SyntaxHighlightedCode(props) {
           );
        })}
        
-       {/* <div className="users flex flex-col gap-2 p-3">
-         <div className="user flex gap-1 items-center cursor-pointer hover:bg-slate-300 shadow-md p-2 rounded-lg">
-        <div className="aspect-square rounded-full p-5 bg-slate-800 flex flex-col items-center justify-center w-fit h-fit">
-          <i className="ri-user-2-fill absolute text-white"></i>
-          </div>
-
-          <h1 className='text-md font-semibold text-gray-800 p-2'>UserName</h1>
-         </div>
-       </div> */}
+      
         </div>
     </section>
 
