@@ -16,7 +16,7 @@ import aiRoutes from './routes/ai.routes.js';
 
  app.use(cors(
   {
-   origin: [https://gossipingai-frontend.vercel.app/],
+   origin: ["https://gossipingai-frontend.vercel.app/"],
    methods: ["POST","GET","PUT"],
    credentials: true,
   }
