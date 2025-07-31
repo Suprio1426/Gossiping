@@ -14,7 +14,13 @@ import aiRoutes from './routes/ai.routes.js';
 
  const app = express();
 
- app.use(cors());
+ app.use(cors(
+  {
+   origin: [https://gossipingai-frontend.vercel.app/],
+   methods: ["POST","GET","PUT"],
+   credentials: true,
+  }
+ ));
  app.use(express.json());   
  app.use(cookieParser());   
  app.use(morgan('dev'));
