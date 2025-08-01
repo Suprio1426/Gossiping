@@ -5,9 +5,10 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+     "build": "echo 'Build completed'",
+    "start": "node server.js",
+    "dev": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Suprio Nath",
