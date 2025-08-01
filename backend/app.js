@@ -18,7 +18,7 @@ import aiRoutes from './routes/ai.routes.js';
   {
    origin: ["https://gossipingai-frontend.vercel.app/"],
    methods: ["POST","GET","PUT"],
-   credentials: true,
+   allowedHeaders: ["Content-Type", "Authorization"],
   }
  ));
  app.use(express.json());   
