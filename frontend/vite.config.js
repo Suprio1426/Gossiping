@@ -17,6 +17,10 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/cdn/, '')
         }
      }
+    },
+
+    build: {
+      outDir: 'dist',   
     }
 
 })
