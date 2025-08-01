@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://gossipingai-backend.vercel.app", 
+  baseURL: "https://gossipingai.vercel.app/", 
 });
 
 axiosInstance.interceptors.request.use(
