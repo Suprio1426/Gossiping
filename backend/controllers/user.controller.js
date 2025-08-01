@@ -89,27 +89,27 @@
 
    }
 
-   export const logoutController = async (req, res) => {
-      try{
+   // export const logoutController = async (req, res) => {
+   //    try{
          
-         const token = req.cookies.token || req.headers.authorization?.split(' ')[1];
-          //const token = req.cookies?.token || req.headers.authorization?.split(' ')[1];
+   //       const token = req.cookies.token || req.headers.authorization?.split(' ')[1];
+   //        //const token = req.cookies?.token || req.headers.authorization?.split(' ')[1];
 
       
-      const result = await redisClient.set(token, 'logout', 'EX', 60 * 60 * 24); // 24h
+   //    const result = await redisClient.set(token, 'logout', 'EX', 60 * 60 * 24); // 24h
       
-         console.log("result:", result);
+   //       console.log("result:", result);
 
-         res.status(200).json({
-            message: 'Logged out successfully'
-         })
+   //       res.status(200).json({
+   //          message: 'Logged out successfully'
+   //       })
 
-      }catch(err){
+   //    }catch(err){
 
-         console.log(err);
-         res.status(400).send(err.message);
-            }
-         }
+   //       console.log(err);
+   //       res.status(400).send(err.message);
+   //          }
+   //       }
 
 
    export const getAllUsersController = async (req, res) => {
