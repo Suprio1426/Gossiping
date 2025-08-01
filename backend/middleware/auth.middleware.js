@@ -1,5 +1,4 @@
  import jwt  from "jsonwebtoken";
- //import redisClient from "../services/redis.service.js";
 
        //FOR PROFILE AUTHORIZATION.....
 
@@ -21,17 +20,6 @@
         return res.status(401).send({ error:'Unauthorised User'});
           }
           
-          // const isBlackListed = await redisClient.get(token);
-
-          // //console.log("isBlackListed:",isBlackListed);
-
-          // if (isBlackListed) {
-           
-          //  res.clearCookie('token');
-
-          // return res.status(401).send({ error:'Token_Invalid'});
-          // }
-               
          const decoded = await jwt.verify(token, process.env.JWT_SECRET);  
 
           //If the token is valid, attach the decoded user information to the request object
