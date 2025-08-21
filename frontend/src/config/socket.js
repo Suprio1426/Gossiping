@@ -5,7 +5,7 @@
 
  export const initializeSocket = (projectId) => {
 
-    socketInstance = socket(import.meta.env. VITE_API_URL, {
+    socketInstance = socket(import.meta.env. VITE_API_URL || 'http://localhost:3000', {
         auth: {
             token: localStorage.getItem('token') || token
         },
