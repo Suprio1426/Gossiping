@@ -27,7 +27,11 @@ import aiRoutes from './routes/ai.routes.js';
 
  app.use('/users', userRoutes);
  app.use('/projects', projectRouter);   
- app.use('/ai', aiRoutes);                  
+ app.use('/ai', aiRoutes);   
+
+ app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'OK', message: 'Server is running' });
+});
 
  app.get('/', (req, res) => {
     res.send("lets start");
