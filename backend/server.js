@@ -13,7 +13,10 @@ const port = process.env.PORT || 3000;
  const server = http.createServer(app);
  
 const io = new Server(server, {
-  cors: { origin : '*'} 
+  cors: {
+    origin: process.env.CORS_ORIGIN || "http://localhost:5173",
+    credentials: true
+  } 
 });
   
  // Middleware to handle socket authentication or other checks
