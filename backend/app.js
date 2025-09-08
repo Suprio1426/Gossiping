@@ -17,7 +17,9 @@ import aiRoutes from './routes/ai.routes.js';
  app.use(cors(
   {
   origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
-  credentials: true
+  credentials: true,
+   methods: ["GET", "POST","DELETE"],
+   allowedHeaders: ["Content-Type", "Authorization"],
 }
  ));
  app.use(express.json());   
