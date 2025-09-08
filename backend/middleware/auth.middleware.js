@@ -21,16 +21,7 @@
         return res.status(401).send({ error:'Unauthorised User'});
           }
           
-          const isBlackListed = await redisClient.get(token);
-
-          //console.log("isBlackListed:",isBlackListed);
-
-          if (isBlackListed) {
-           
-           res.clearCookie('token');
-
-          return res.status(401).send({ error:'Token_Invalid'});
-          }
+        
                
          const decoded = await jwt.verify(token, process.env.JWT_SECRET);  
 
