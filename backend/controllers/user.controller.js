@@ -1,7 +1,7 @@
  import userModel from '../models/user.model.js';
  import * as userServices from '../services/user.service.js';
  import { validationResult } from 'express-validator';
- import redisClient from '../services/redis.service.js'
+
 
       //create user......
 
